@@ -10,7 +10,7 @@ The CI/CD pipeline consists of the following stages:
 2. **Static Code Analysis** - Performs linting with ESLint
 3. **Build** - Creates a production build of the application
 4. **Docker Image Creation** - Builds a Docker image using a multi-stage Dockerfile
-5. **Docker Image Scan** - Scans the image for vulnerabilities using Trivy
+5. **Docker Image Scan** - Scans the locally built image for vulnerabilities using Trivy. The repository name is normalized to lowercase so the scan reference is a valid container image name.
 6. **Docker Image Push** - Pushes the image to GitHub Container Registry
 7. **Update Kubernetes Deployment** - Updates the Kubernetes deployment file with the new image tag
 
